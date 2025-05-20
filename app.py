@@ -44,6 +44,7 @@ async def root():
 @app.post("/generate-image/")
 async def generate_image(req: PromptRequest):
     print(f"Received prompt: {req.prompt}")
+    print("starting generation...")
 
     # Generate list of images
     images = [pipe(req.prompt, guidance_scale=req.guidance_scale).images[0]
