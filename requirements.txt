@@ -1,0 +1,8 @@
+fastapi
+pydantic
+diffusers
+torch
+Pillow==10.3.0
+uvicorn
+transformers
+accelerate
