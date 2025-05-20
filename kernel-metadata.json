@@ -1,0 +1,11 @@
+{
+  "id": "https://www.kaggle.com/code/soumyajitsensharma/ai-patent-backend",
+  "title": "ai-patent-backend",
+  "code_file": "notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "gpu_type": "T4"
+}
