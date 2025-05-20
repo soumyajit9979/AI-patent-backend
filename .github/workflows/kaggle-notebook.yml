@@ -2,7 +2,7 @@ name: Update Kaggle Notebook
 
 on:
   push:
-    branches: [ main ]  # or your branch
+    branches: [ master ]  # or your branch
 
 jobs:
   update-kaggle-notebook:
