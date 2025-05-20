@@ -1,0 +1,29 @@
+name: Update Kaggle Notebook
+
+on:
+  push:
+    branches: [ main ]  # or your branch
+
+jobs:
+  update-kaggle-notebook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Kaggle CLI
+        run: pip install kaggle
+
+      - name: Write kaggle.json from GitHub Secret
+        run: |
+          mkdir -p ~/.kaggle
+          echo "${{ secrets.KAGGLE_JSON }}" > ~/.kaggle/kaggle.json
+          chmod 600 ~/.kaggle/kaggle.json
+
+      - name: Push notebook to Kaggle
+        run: kaggle kernels push -p .
