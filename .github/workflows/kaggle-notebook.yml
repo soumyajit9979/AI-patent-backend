@@ -22,8 +22,9 @@ jobs:
       - name: Write kaggle.json from GitHub Secret
         run: |
           mkdir -p ~/.kaggle
-          echo "${{ secrets.KAGGLE_JSON }}" > ~/.kaggle/kaggle.json
+          echo '${{ secrets.KAGGLE_JSON }}' > ~/.kaggle/kaggle.json
           chmod 600 ~/.kaggle/kaggle.json
+
 
       - name: Push notebook to Kaggle
         run: kaggle kernels push -p .
