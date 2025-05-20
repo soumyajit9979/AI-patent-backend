@@ -25,6 +25,8 @@ jobs:
           echo '${{ secrets.KAGGLE_JSON }}' > ~/.kaggle/kaggle.json
           chmod 600 ~/.kaggle/kaggle.json
 
-
+      - name: Show current folder contents
+        run: ls -R
+        
       - name: Push notebook to Kaggle
         run: kaggle kernels push -p .
