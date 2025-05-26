@@ -42,7 +42,6 @@ def convert_to_dotted_line_on_mask(line_img, mask_img, dot_length=10, gap_length
         line_img = cv2.cvtColor(line_img, cv2.COLOR_BGRA2BGR)
     if mask_img.shape[2] == 4:
         mask_img = cv2.cvtColor(mask_img, cv2.COLOR_BGRA2BGR)
-
     if line_img.shape[:2] != mask_img.shape[:2]:
         mask_img = cv2.resize(mask_img, (line_img.shape[1], line_img.shape[0]))
 
