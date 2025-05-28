@@ -42,6 +42,7 @@ def convert_to_dotted_line_on_mask(line_img, mask_img, dot_length=10, gap_length
         line_img = cv2.cvtColor(line_img, cv2.COLOR_BGRA2BGR)
     if mask_img.shape[2] == 4:
         mask_img = cv2.cvtColor(mask_img, cv2.COLOR_BGRA2BGR)
+
     if line_img.shape[:2] != mask_img.shape[:2]:
         mask_img = cv2.resize(mask_img, (line_img.shape[1], line_img.shape[0]))
 
@@ -84,6 +85,7 @@ def convert_to_dotted_line_on_mask(line_img, mask_img, dot_length=10, gap_length
                 end_x = int(start_pt[0] + ratio * (pt2[0] - start_pt[0]))
                 end_y = int(start_pt[1] + ratio * (pt2[1] - start_pt[1]))
                 end_pt = (end_x, end_y)
+
                 if is_dot:
                     cv2.line(output, start_pt, end_pt, (0, 0, 0), 1)
 
@@ -110,7 +112,6 @@ async def root():
 async def generate_image(req: PromptRequest):
     print(f"Received prompt: {req.prompt}")
     print("starting generation...")
-
     # Generate list of images
     images = [pipe(req.prompt, guidance_scale=req.guidance_scale).images[0]
               for _ in range(req.num_images)]

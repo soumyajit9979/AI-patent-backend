@@ -17,6 +17,6 @@ COPY . .
 USER user
 
 # Expose the port that the application will run on
-EXPOSE 7860
+EXPOSE 8003
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860", "--reload"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8003", "--reload"]
