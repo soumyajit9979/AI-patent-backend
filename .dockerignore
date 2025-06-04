@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+
+# Python virtual environment
+.venv
+venv
+env
+ENV
+*.pyenv
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Test files (if not needed in production image)
+tests/
+*.test.py
+pytest.ini
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Local secrets or config (should be managed via environment variables or secrets management)
+*.local
+*.env
+
+# Any large data files or assets not needed in the final image
+# For example:
+# data/raw_data/
+# large_model.pkl
